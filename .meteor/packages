@@ -13,10 +13,11 @@ es5-shim
 ecmascript
 
 # Rendering
-react
+mquandalle:jade
 
 # Routing
-reactrouter:react-router
+kadira:flow-router
+kadira:blaze-layout
 
 # Assets
 fourseven:scss
