@@ -11,3 +11,6 @@ tracker
 standard-minifiers
 es5-shim
 ecmascript
+
+# Rendering
+react
