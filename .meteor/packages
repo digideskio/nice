@@ -17,3 +17,6 @@ react
 
 # Routing
 reactrouter:react-router
+
+# Assets
+fourseven:scss

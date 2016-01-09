@@ -1,0 +1,19 @@
+{
+  "name": "nice",
+  "homepage": "https://github.com/sup/nice",
+  "authors": [
+    "jona <jona@jona.io>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "primer-css": "~2.5.0"
+  }
+}
