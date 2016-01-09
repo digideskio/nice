@@ -1,0 +1,13 @@
+# Base
+meteor-base
+mobile-experience
+mongo
+blaze-html-templates
+session
+jquery
+tracker
+
+# Compilation
+standard-minifiers
+es5-shim
+ecmascript
