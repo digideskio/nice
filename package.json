@@ -1,7 +1,7 @@
 {
   "standard": {
     "globals": [
-      "Meteor", "$", "BlazeLayout", "FlowRouter"
+      "Meteor", "$", "BlazeLayout", "FlowRouter", "AccountsTemplates"
     ]
   }
 }

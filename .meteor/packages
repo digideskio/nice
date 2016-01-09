@@ -11,9 +11,10 @@ tracker
 standard-minifiers
 es5-shim
 ecmascript
-
-# Rendering
 mquandalle:jade
+
+# Accounts
+#useraccounts:core
 
 # Routing
 kadira:flow-router
