@@ -1,5 +1,20 @@
 @import "{}/bower_components/primer-css/scss/primer.scss";
 
+@import "mixins.scss";
+
 .container {
   margin-top: 30px;
+}
+
+.at-input {
+  margin-bottom: 20px;
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+}
+
+#at-pwd-form > button {
+  @include button-style;
 }

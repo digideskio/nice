@@ -14,11 +14,14 @@ ecmascript
 mquandalle:jade
 
 # Accounts
-#useraccounts:core
+accounts-password
+useraccounts:core
+useraccounts:unstyled
 
 # Routing
 kadira:flow-router
 kadira:blaze-layout
+useraccounts:flow-routing
 
 # Assets
 fourseven:scss
