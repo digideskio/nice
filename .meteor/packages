@@ -24,5 +24,8 @@ kadira:blaze-layout
 useraccounts:flow-routing
 zimme:active-route
 
+# Database
+aldeed:collection2
+
 # Assets
 fourseven:scss
