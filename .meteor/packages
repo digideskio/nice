@@ -29,9 +29,11 @@ zimme:active-route
 # Database
 aldeed:collection2
 aldeed:autoform
+matb33:collection-hooks
 
 # Assets
 fourseven:scss
 
 # Misc
 jparker:gravatar
+ongoworks:security
