@@ -19,7 +19,6 @@ Template.user_view.helpers({
 AutoForm.addHooks('askSingleQuestion', {
   before: {
     insert (doc) {
-      console.log(doc)
       let username = FlowRouter.getParam('username')
       doc.recipientId = Users.findOne({username})._id
       return doc
