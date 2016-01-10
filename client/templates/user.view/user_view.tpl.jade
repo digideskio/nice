@@ -9,7 +9,7 @@ if Template.subscriptionsReady
     .blankslate
       +autoForm collection='Questions' id='askSingleQuestion' type='insert'
         h2 Ask #{username} a question!
-        +afFieldInput type='textarea' placeholder='Ask a question!' class='input-block'
+        +afFieldInput name='content' type='textarea' placeholder='Ask a question!' class='input-block'
         br
         button.btn.btn-primary(type='submit') Ask
 else

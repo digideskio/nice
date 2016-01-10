@@ -15,3 +15,14 @@ Template.user_view.helpers({
     return Gravatar.imageUrl(emails[0].address)
   }
 })
+
+AutoForm.addHooks('askSingleQuestion', {
+  before: {
+    insert (doc) {
+      console.log(doc)
+      let username = FlowRouter.getParam('username')
+      doc.recipientId = Users.findOne({username})._id
+      return doc
+    }
+  }
+})

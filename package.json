@@ -3,7 +3,7 @@
     "globals": [
       "Meteor", "$", "BlazeLayout", "FlowRouter", "AccountsTemplates",
       "Users", "SimpleSchema", "Template", "check", "Gravatar",
-      "Questions"
+      "Questions", "AutoForm"
     ]
   }
 }
