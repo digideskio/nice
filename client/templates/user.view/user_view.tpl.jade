@@ -1,5 +1,10 @@
 if Template.subscriptionsReady
   with user
-    | #{username}
+    .columns
+      .two-fifths.column
+        img.avatar(width='100' height='100' src='{{gravatar(emails)}}')
+      .three-fifths.column
+        h1= username
+        .lead is cool
 else
   p Loading...

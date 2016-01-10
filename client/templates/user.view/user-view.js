@@ -9,7 +9,9 @@ Template.user_view.helpers({
   user () {
     let username = FlowRouter.getParam('username')
     let user = Users.findOne({username}) || {}
-    console.log(user)
     return user
+  },
+  gravatar (emails) {
+    return Gravatar.imageUrl(emails[0].address)
   }
 })
