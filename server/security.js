@@ -1,0 +1,1 @@
+Questions.permit(['insert']).apply()
