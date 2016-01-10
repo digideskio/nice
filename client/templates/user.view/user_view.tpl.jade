@@ -6,5 +6,11 @@ if Template.subscriptionsReady
       .three-fifths.column
         h1= username
         .lead is cool
+    .blankslate
+      +autoForm collection='Questions' id='askSingleQuestion' type='insert'
+        h2 Ask #{username} a question!
+        +afFieldInput type='textarea' placeholder='Ask a question!' class='input-block'
+        br
+        button.btn.btn-primary(type='submit') Ask
 else
-  p Loading...
+  p.lead Loading... ;)
