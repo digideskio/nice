@@ -22,6 +22,7 @@ useraccounts:unstyled
 kadira:flow-router
 kadira:blaze-layout
 useraccounts:flow-routing
+zimme:active-route
 
 # Assets
 fourseven:scss

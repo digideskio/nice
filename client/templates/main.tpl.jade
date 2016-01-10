@@ -1,6 +1,10 @@
-+Template.dynamic template=top
-
 .container
   .columns
-    .five-fifths.column.centered
-      +Template.dynamic template=main
+    if currentUser
+      .one-fifth.column
+        +Template.dynamic template=top
+      .four-fifths.column
+        +Template.dynamic template=main
+    else
+      .five-fifths.column
+        +Template.dynamic template=main
