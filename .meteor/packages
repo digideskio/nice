@@ -17,6 +17,7 @@ mquandalle:jade
 accounts-password
 useraccounts:core
 useraccounts:unstyled
+alanning:roles
 
 # Routing
 kadira:flow-router

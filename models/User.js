@@ -22,6 +22,10 @@ const UserSchema = new SimpleSchema({
     type: Object,
     optional: true,
     blackbox: true
+  },
+  roles: {
+    type: [String],
+    optional: true
   }
 })
 
