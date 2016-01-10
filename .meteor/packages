@@ -28,6 +28,7 @@ zimme:active-route
 
 # Database
 aldeed:collection2
+aldeed:autoform
 
 # Assets
 fourseven:scss
