@@ -2,7 +2,8 @@
   "standard": {
     "globals": [
       "Meteor", "$", "BlazeLayout", "FlowRouter", "AccountsTemplates",
-      "Users", "SimpleSchema", "Template", "check", "Gravatar"
+      "Users", "SimpleSchema", "Template", "check", "Gravatar",
+      "Questions"
     ]
   }
 }
