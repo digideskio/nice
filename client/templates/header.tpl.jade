@@ -1,10 +1,7 @@
-.menu
-  a.menu-item(class='{{isActivePath "/timeline"}}' href='/timeline')
-    span.octicon.octicon-home
+.ui.vertical.menu
+  a.item(class='{{isActivePath "/timeline"}}' href='/timeline')
     | Timeline
-  a.menu-item(class='{{isActivePath "/inbox"}}' href='/inbox')
-    span.octicon.octicon-mail
+  a.item(class='{{isActivePath "/inbox"}}' href='/inbox')
     | Inbox
-  a.menu-item(href='/logout')
-    span.octicon.octicon-arrow-left
+  a.item(href='/logout')
     | Logout
