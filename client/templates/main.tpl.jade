@@ -1,10 +1,9 @@
-.container
-  .columns
-    if currentUser
-      .one-fifth.column
-        +Template.dynamic template=top
-      .four-fifths.column
-        +Template.dynamic template=main
-    else
-      .five-fifths.column
-        +Template.dynamic template=main
+if currentUser
+  .ui.doubling.stackable.grid.container
+    .five.wide.column
+      +Template.dynamic template=top
+    .eleven.wide.column
+      +Template.dynamic template=main
+else
+  .ui.container.top-margin
+    +Template.dynamic template=main
