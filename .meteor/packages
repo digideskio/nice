@@ -17,7 +17,7 @@ mquandalle:jade
 # Accounts
 accounts-password
 useraccounts:core
-useraccounts:unstyled
+useraccounts:semantic-ui
 alanning:roles
 
 # Routing
