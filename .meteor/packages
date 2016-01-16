@@ -33,6 +33,8 @@ matb33:collection-hooks
 
 # Assets
 fourseven:scss
+semantic:ui
+flemay:less-autoprefixer
 
 # Misc
 jparker:gravatar
