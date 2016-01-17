@@ -16,11 +16,15 @@ Template.header.events({
 })
 
 Template.main.onRendered(() => {
+  if (Session.get('nice.bannerContent') !== Info.banner.content)
+    Session.clear('nice.bannerHidden')
+
   if (Session.get('nice.bannerHidden') === true)
     $('#welcome').hide(0)
 
   $('#welcome .close').on('click', () => {
     Session.setPersistent('nice.bannerHidden', true)
+    Session.setPersistent('nice.bannerContent', Info.banner.content)
     $('#welcome').hide(0)
   })
 })
