@@ -1,9 +1,16 @@
 {
-  "standard": {
-    "globals": [
-      "Meteor", "$", "BlazeLayout", "FlowRouter", "AccountsTemplates",
-      "Users", "SimpleSchema", "Template", "check", "Gravatar",
-      "Questions", "AutoForm"
-    ]
-  }
+  "name": "nice",
+  "version": "0.0.1",
+  "description": "twitter clone",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sup/nice.git"
+  },
+  "author": "Jona Hugger <jona@schisma.co> (http://schisma.co/)",
+  "license": "MIT"
 }
