@@ -3,8 +3,13 @@ Template.header.events({
     evt.preventDefault()
 
     let content = evt.target.content.value
-    let userid = Meteor.userId()
-    Updates.insert({content, user: {_id: userid}})
+    let userObj = Meteor.user()
+    let user = {
+      _id: userObj._id,
+      username: userObj.username,
+      email: userObj.emails[0].address
+    }
+    Updates.insert({content, user})
 
     $('#updateModalForm textarea').val('')
   }
