@@ -1,7 +1,20 @@
 .ui.vertical.menu
+  a.teal.item#update New Update
   a.teal.item(class='{{isActivePath "/timeline"}}' href='/timeline')
     | Timeline
   a.item(class='{{isActivePath "/notifications"}}' href='/notifications')
     | Notifications
   a.item(href='/logout')
     | Logout
+
+.ui.modal#update-modal
+  .header Post a new update
+  .content
+    .ui.form
+      .field
+        label Content
+        textarea(rows='2')
+  .actions
+    .ui.positive.right.labeled.icon.button
+      | Post
+      i.checkmark.icon
