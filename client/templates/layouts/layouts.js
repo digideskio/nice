@@ -15,7 +15,15 @@ Template.header.events({
   }
 })
 
-import pkg from '../../../package.json'
+Template.main.onRendered(() => {
+  if (Session.get('nice.bannerHidden') === true)
+    $('#welcome').hide(0)
+
+  $('#welcome .close').on('click', () => {
+    Session.setPersistent('nice.bannerHidden', true)
+    $('#welcome').hide(0)
+  })
+})
 
 Template.main.helpers({
   banner () { return Info.banner }
