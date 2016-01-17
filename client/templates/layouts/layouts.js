@@ -1,5 +1,11 @@
 Template.header.events({
-  'click #update': evt => {
-    $('#update-modal').modal('show')
+  'submit #updateModalForm': evt => {
+    evt.preventDefault()
+
+    let content = evt.target.content.value
+    let userid = Meteor.userId()
+    Updates.insert({content, user: {_id: userid}})
+
+    $('#updateModalForm textarea').val('')
   }
 })

@@ -1,16 +1,15 @@
 if currentUser
   .ui.doubling.stackable.grid.container.top-margin
-    .five.wide.column
+    .four.wide.column
       +Template.dynamic template=top
-    .eleven.wide.column
+    .twelve.wide.column
       +Template.dynamic template=main
     .sixteen.wide.column.top-margin
       .ui.progress#site-progress(data-percent='10')
         .bar
           .progress
         .label Site Progress
-      script
-        $('#site-progress').progress()
+      script $('#site-progress').progress()
 else
   .ui.container.top-margin
     +Template.dynamic template=main

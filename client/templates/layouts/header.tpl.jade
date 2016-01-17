@@ -1,5 +1,4 @@
-.ui.vertical.menu
-  a.teal.item#update New Update
+.ui.vertical.fluid.menu
   a.teal.item(class='{{isActivePath "/timeline"}}' href='/timeline')
     | Timeline
   a.item(class='{{isActivePath "/notifications"}}' href='/notifications')
@@ -7,14 +6,9 @@
   a.item(href='/logout')
     | Logout
 
-.ui.modal#update-modal
-  .header Post a new update
-  .content
-    .ui.form
-      .field
-        label Content
-        textarea(rows='2')
-  .actions
-    .ui.positive.right.labeled.icon.button
-      | Post
-      i.checkmark.icon
+.ui.segment
+  form.ui.form#updateModalForm
+    .field
+      label New Update
+      textarea(rows='2' name='content')
+    button.ui.button(type='submit') Post
