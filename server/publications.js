@@ -6,3 +6,7 @@ Meteor.publish('userData', username => {
     }
   })
 })
+
+Meteor.publish('updateFeed', id => {
+  return Updates.find()
+})

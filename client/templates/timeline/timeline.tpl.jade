@@ -1,1 +1,10 @@
-| Timeline
+if Template.subscriptionsReady
+  .ui.large.feed
+    each updates
+      .event
+        .label #[i.pencil.icon]
+        .content
+          .summary @#{user.username}
+          .extra.text= content
+else
+  i.notched.circle.loading.icon
