@@ -14,3 +14,9 @@ Template.header.events({
     $('#updateModalForm textarea').val('')
   }
 })
+
+import pkg from '../../../package.json'
+
+Template.main.helpers({
+  banner () { return Info.banner }
+})

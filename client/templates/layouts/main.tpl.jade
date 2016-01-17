@@ -1,5 +1,11 @@
 if currentUser
   .ui.doubling.stackable.grid.container.top-margin
+    .sixteen.wide.column
+      .ui.message
+        with banner
+          i.close.icon
+          .header= title
+          p= content
     .twelve.wide.column
       +Template.dynamic template=main
     .four.wide.column
