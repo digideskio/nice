@@ -4,7 +4,7 @@ if Template.subscriptionsReady
       .event
         .label #[i.pencil.icon]
         .content
-          .summary @#{user.username}
+          a.summary(href='/u/#{user.username}') @#{user.username}
           .extra.text= content
       hr(style='border: 0; border-bottom: 1px lightgray solid;')
 else
