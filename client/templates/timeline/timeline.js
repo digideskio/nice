@@ -1,5 +1,6 @@
 Template.timeline.onCreated(function () {
   this.autorun(() => {
+    // sub to only the stuff we need
     this.subscribe('updateFeed', Meteor.userId())
   })
 })

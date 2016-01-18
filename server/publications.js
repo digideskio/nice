@@ -1,12 +1,4 @@
-Meteor.publish('userData', username => {
-  check(username, String)
-  return Users.find({username}, {
-    fields: {
-      services: 0
-    }
-  })
-})
-
+// TODO: dont make this all updates
 Meteor.publish('updateFeed', id => {
   return Updates.find()
 })

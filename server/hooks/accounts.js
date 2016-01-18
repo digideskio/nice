@@ -1,4 +1,6 @@
 Accounts.validateNewUser(user => {
+  // search for invitation and see if it isn't used already. if it isn't, update
+  // it to be and continue.
   invitation = Invitations.findOne({
     token: user.profile.invitationToken,
     used: false
