@@ -6,12 +6,12 @@ if Template.subscriptionsReady
       .fourteen.wide.column
         h1.ui.header= username
         p#profile-bio= profile.bio
-    .sixteen.wide.column
+    .sixteen.wide.column.ui.feed
       each updates
         .event
           .label #[i.pencil.icon]
           .content
-            a.summary(href='/u/#{user.username}') @#{user.username}
+            .summary @#{user.username}
             .extra.text= content
         hr(style='border: 0; border-bottom: 1px lightgray solid;')
 else
