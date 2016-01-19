@@ -29,7 +29,7 @@ zimme:active-route
 # Database
 aldeed:collection2
 aldeed:autoform
-matb33:collection-hooks
+dburles:collection-helpers
 
 # Assets
 fourseven:scss
@@ -40,3 +40,4 @@ jparker:gravatar
 # Misc
 ongoworks:security
 u2622:persistent-session
+momentjs:moment

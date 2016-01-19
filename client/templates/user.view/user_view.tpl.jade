@@ -2,7 +2,7 @@ if Template.subscriptionsReady
   .ui.doubling.stackable.grid
     with user
       .two.wide.column
-        img(src='#{gravatar}' width='100' height='100')
+        img(src='{{gravatar 100}}' width='100' height='100')
       .fourteen.wide.column
         h1.ui.header= username
         p#profile-bio= profile.bio
