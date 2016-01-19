@@ -2,7 +2,8 @@ if Template.subscriptionsReady
   .ui.large.feed
     each updates
       .event
-        .label #[i.pencil.icon]
+        .label 
+          a(href='/u/#{user.username}') #[img(src='{{gravatar user.email}}')]
         .content
           a.summary(href='/u/#{user.username}') @#{user.username}
           .extra.text= content

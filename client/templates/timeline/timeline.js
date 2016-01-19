@@ -8,5 +8,9 @@ Template.timeline.onCreated(function () {
 Template.timeline.helpers({
   updates () {
     return Updates.find({}, {sort: {createdAt: -1}})
+  },
+  gravatar (email) {
+    console.log(email)
+    return Gravatar.imageUrl(email, {size: 50})
   }
 })
