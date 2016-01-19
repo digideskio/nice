@@ -9,6 +9,9 @@ Template.user_view.helpers({
   user () {
     return thisUser()
   },
+  updates () {
+    return Updates.find({}, {sort: {createdAt: -1}})
+  },
   gravatar () {
     let user = thisUser()
     return Gravatar.imageUrl(user.emails[0].address, { size: 100 })

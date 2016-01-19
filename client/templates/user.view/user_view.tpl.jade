@@ -1,11 +1,18 @@
 if Template.subscriptionsReady
-  with user
-    .ui.doubling.stackable.grid
+  .ui.doubling.stackable.grid
+    with user
       .two.wide.column
         img(src='#{gravatar}' width='100' height='100')
       .fourteen.wide.column
         h1.ui.header= username
         p#profile-bio= profile.bio
-        
+    .sixteen.wide.column
+      each updates
+        .event
+          .label #[i.pencil.icon]
+          .content
+            a.summary(href='/u/#{user.username}') @#{user.username}
+            .extra.text= content
+        hr(style='border: 0; border-bottom: 1px lightgray solid;')
 else
   i.notched.circle.loading.icon
