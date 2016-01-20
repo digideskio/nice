@@ -25,6 +25,17 @@ Template.user_view.events({
       Users.update({_id: user._id}, {$push: {following: tUser._id}})
       Users.update({_id: tUser._id}, {$push: {followers: user._id}})
     }
+  },
+  'click #unfollow-button': evt => {
+    evt.preventDefault()
+    let user = Meteor.user()
+    let tUser = thisUser()
+    // check if the logged in user is following the target user
+    if (_.contains(user.following, tUser._id) &&
+        _.contains(tUser.followers, user._id)) {
+      Users.update({_id: user._id}, {$pull: {following: tUser._id}})
+      Users.update({_id: tUser._id}, {$pull: {followers: user._id}})
+    }
   }
 })
 

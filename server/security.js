@@ -9,12 +9,20 @@ Security.defineMethod('ifIsSameUser', {
 Security.defineMethod('ifChangesSelf', {
   fetch: [],
   transform: null,
-  deny (type, arg, userId, doc) {
-    const origUser = Users.findOne({_id: doc._id})
-    if (_.difference(origUser.followers, doc.followers).length === 1 &&
-        _.difference(origUser.followers, doc.followers)[0] === userId)
-      return false
-    return true
+  deny (type, arg, userId, doc, fields, modifier) {
+    if (modifier.$push) {
+      if (modifier.$push.followers.length === 1 &&
+          modifier.$push.followers[0] === userId) {
+        return false
+      }
+    } else if (modifier.$pull) {
+      if (modifier.$pull.followers.length === 1 &&
+          modifier.$pull.followers[0] === userId) {
+        return false
+      }
+    } else {
+      return true
+    }
   }
 })
 

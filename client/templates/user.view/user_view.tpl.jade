@@ -8,7 +8,7 @@ if Template.subscriptionsReady
         p#profile-bio= profile.bio
       .three.wide.column
         if is_followed_by_current
-          button.ui.disabled.button#follow-button Following
+          button.ui.red.button#unfollow-button Unfollow
         else
           button.ui.primary.button#follow-button Follow
     .sixteen.wide.column.ui.feed
