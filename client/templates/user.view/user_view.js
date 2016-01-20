@@ -11,6 +11,9 @@ Template.user_view.helpers({
   },
   updates () {
     return Updates.find({}, {sort: {createdAt: -1}})
+  },
+  userIsCurrent () {
+    return thisUser()._id === Meteor.userId()
   }
 })
 

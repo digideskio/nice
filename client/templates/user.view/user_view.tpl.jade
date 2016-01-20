@@ -8,10 +8,13 @@ if Template.subscriptionsReady
         p#profile-bio= profile.bio
       .three.wide.column
         //- checks if the user on page is followed by the logged in user
-        if is_followed_by_current
-          button.ui.red.button#unfollow-button Unfollow
+        if userIsCurrent
+          | Why would you follow yourself?
         else
-          button.ui.primary.button#follow-button Follow
+          if isFollowedByCurrent
+            button.ui.red.button#unfollow-button Unfollow
+          else
+            button.ui.primary.button#follow-button Follow
     .sixteen.wide.column.ui.feed
       each updates
         .event
