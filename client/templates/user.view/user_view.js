@@ -14,6 +14,12 @@ Template.user_view.helpers({
   },
   userIsCurrent () {
     return thisUser()._id === Meteor.userId()
+  },
+  followersCount () {
+    return thisUser().followers.length
+  },
+  followingCount () {
+    return thisUser().following.length
   }
 })
 

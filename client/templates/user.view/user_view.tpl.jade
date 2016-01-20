@@ -9,6 +9,9 @@ if Template.subscriptionsReady
           p#profile-bio= profile.bio
         else
           p#profile-bio has no bio :(
+        p#profile-bio
+          | #[b #{followersCount}] followers
+          | #[b #{followingCount}] following
       .three.wide.column
         //- checks if the user on page is followed by the logged in user
         if userIsCurrent
