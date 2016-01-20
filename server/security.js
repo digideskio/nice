@@ -6,6 +6,9 @@ Security.defineMethod('ifIsSameUser', {
   }
 })
 
+// this functions checks if the document modification only consists of
+// adding/removing the logged in user to a followers list of another user.
+// this prevents users from modifying followers at will.
 Security.defineMethod('ifChangesSelf', {
   fetch: [],
   transform: null,

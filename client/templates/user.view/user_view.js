@@ -15,6 +15,7 @@ Template.user_view.helpers({
 })
 
 Template.user_view.events({
+  // this is what happens when someone follows
   'click #follow-button': evt => {
     evt.preventDefault()
     let user = Meteor.user()
@@ -26,6 +27,7 @@ Template.user_view.events({
       Users.update({_id: tUser._id}, {$push: {followers: user._id}})
     }
   },
+  // likewise, this is what happens when someone unfollows
   'click #unfollow-button': evt => {
     evt.preventDefault()
     let user = Meteor.user()
