@@ -1,5 +1,8 @@
 if currentUser
+  
   .ui.doubling.stackable.grid.container.top-margin
+    .sixteen.wide.column
+      +Template.dynamic template=top
     .sixteen.wide.column
       .ui.message#welcome
         with banner
@@ -9,7 +12,7 @@ if currentUser
     .twelve.wide.column
       +Template.dynamic template=main
     .four.wide.column
-      +Template.dynamic template=top
+      +sidebar
     .sixteen.wide.column.top-margin
       .ui.progress#site-progress(data-percent='25')
         .bar

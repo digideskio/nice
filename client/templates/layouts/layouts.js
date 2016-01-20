@@ -18,9 +18,9 @@ Template.main.helpers({
   banner () { return Info.banner }
 })
 
-// header template
+// sidebar template
 
-Template.header.events({
+Template.sidebar.events({
   'submit #updateModalForm': evt => {
     evt.preventDefault()
 

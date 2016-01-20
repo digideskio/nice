@@ -1,17 +1,10 @@
 //- TODO: rename this template
 
-.ui.vertical.fluid.menu
+.ui.blue.top.fixed.menu
   .header.item nice alpha
-  a.teal.item(class='{{isActivePath "/timeline"}}' href='/timeline')
+  a.item(class='{{isActivePath "/timeline"}}' href='/timeline')
     | Timeline
   a.item(class='{{isActivePath "/notifications"}}' href='/notifications')
     | Notifications
-  a.item(href='/logout')
+  a.right.item(href='/logout')
     | Logout
-
-.ui.segment
-  form.ui.form#updateModalForm
-    .field
-      label New Update
-      textarea(rows='2' name='content')
-    button.ui.button(type='submit') Post
