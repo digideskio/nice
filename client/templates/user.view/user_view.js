@@ -14,6 +14,20 @@ Template.user_view.helpers({
   }
 })
 
+Template.user_view.events({
+  'click #follow-button': evt => {
+    evt.preventDefault()
+    let user = Meteor.user()
+    let tUser = thisUser()
+    // check if the logged in user isn't following the target user yet
+    if (!_.contains(user.following, tUser._id) &&
+        !_.contains(tUser.followers, user._id)) {
+      Users.update({_id: user._id}, {$push: {following: tUser._id}})
+      Users.update({_id: tUser._id}, {$push: {followers: user._id}})
+    }
+  }
+})
+
 const thisUser = () => {
   // let's take a short break to discuss: why not 'user = Users.find()[0]'?
   // there's only one user subscribed to, right?

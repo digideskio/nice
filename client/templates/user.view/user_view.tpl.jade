@@ -3,9 +3,14 @@ if Template.subscriptionsReady
     with user
       .two.wide.column
         img(src='{{gravatar 100}}' width='100' height='100')
-      .fourteen.wide.column
+      .eleven.wide.column
         h1.ui.header= username
         p#profile-bio= profile.bio
+      .three.wide.column
+        if is_followed_by_current
+          button.ui.disabled.button#follow-button Following
+        else
+          button.ui.primary.button#follow-button Follow
     .sixteen.wide.column.ui.feed
       each updates
         .event

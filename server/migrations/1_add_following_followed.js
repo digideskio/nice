@@ -3,8 +3,8 @@ Migrations.add({
   up () {
     Users.find().forEach(user => {
       Users.update(user, {$set: {
-        'profile.following': [],
-        'profile.followers': []
+        following: [],
+        followers: []
       }})
     })
   }

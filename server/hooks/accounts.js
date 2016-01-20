@@ -16,7 +16,7 @@ Accounts.validateNewUser(user => {
 
 Accounts.onCreateUser((opts, user) => {
   user.profile = opts.profile
-  user.profile.following = []
-  user.profile.followers = []
+  user.following = []
+  user.followers = []
   return user
 })
