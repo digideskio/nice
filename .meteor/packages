@@ -30,6 +30,7 @@ zimme:active-route
 aldeed:collection2
 aldeed:autoform
 dburles:collection-helpers
+percolate:migrations
 
 # Assets
 fourseven:scss
