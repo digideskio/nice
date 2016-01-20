@@ -1,6 +1,11 @@
 // TODO: dont make this all updates
-Meteor.publish('updateFeed', id => {
-  return Updates.find()
+Meteor.publish('updateFeed', _id => {
+  let followed = Users.findOne({_id}).following
+  let updates = Updates.find({$or: [
+    {'user._id': {$in: followed}},
+    {'user._id': {$eq: _id}}
+  ]})
+  return updates
 })
 
 Meteor.publish('userOne', username => {
