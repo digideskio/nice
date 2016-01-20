@@ -13,3 +13,10 @@ Accounts.validateNewUser(user => {
   }, {$set: { used: true }})
   return true
 })
+
+Accounts.onCreateUser((opts, user) => {
+  user.profile = opts.profile
+  user.profile.following = []
+  user.profile.followers = []
+  return user
+})
