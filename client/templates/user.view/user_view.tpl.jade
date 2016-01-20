@@ -5,7 +5,10 @@ if Template.subscriptionsReady
         img(src='{{gravatar 100}}' width='100' height='100')
       .eleven.wide.column
         h1.ui.header= username
-        p#profile-bio= profile.bio
+        if profile.bio
+          p#profile-bio= profile.bio
+        else
+          p#profile-bio has no bio :(
       .three.wide.column
         //- checks if the user on page is followed by the logged in user
         if userIsCurrent
