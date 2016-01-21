@@ -47,6 +47,11 @@ Template.user_view.events({
       Users.update({_id: user._id}, {$pull: {following: tUser._id}})
       Users.update({_id: tUser._id}, {$pull: {followers: user._id}})
     }
+  },
+  // toggles the user image modal
+  'click #toggle-modal': evt => {
+    evt.preventDefault()
+    $('#profile-image-modal').modal('show')
   }
 })
 

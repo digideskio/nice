@@ -2,7 +2,7 @@ if Template.subscriptionsReady
   .ui.doubling.stackable.grid
     with user
       .two.wide.column
-        img(src='{{gravatar 100}}' width='100' height='100')
+        a(href='#')#toggle-modal #[img(src='{{gravatar 100}}' width='100' height='100')]
       .eleven.wide.column
         h1.ui.header= username
         if profile.bio
@@ -21,6 +21,9 @@ if Template.subscriptionsReady
             button.ui.red.button#unfollow-button Unfollow
           else
             button.ui.primary.button#follow-button Follow
+      .ui.basic.modal#profile-image-modal
+        .content
+          img.medium.image(src='{{gravatar 500}}')
     .sixteen.wide.column.ui.feed
       each updates
         .event
