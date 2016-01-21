@@ -22,7 +22,8 @@ if Template.subscriptionsReady
           else
             button.ui.primary.button#follow-button Follow
       .ui.basic.modal#profile-image-modal
-        .content
+        .header #{username}
+        .image.content
           img.medium.image(src='{{gravatar 500}}')
     .sixteen.wide.column.ui.feed
       each updates
