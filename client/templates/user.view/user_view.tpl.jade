@@ -4,18 +4,18 @@ if Template.subscriptionsReady
       .two.wide.column
         a(href='#')#toggle-modal #[img(src='{{gravatar 100}}' width='100' height='100')]
       .eleven.wide.column
-        h1.ui.header= username
+        h1.ui.header#profile-username= username
         if profile.bio
           p#profile-bio= profile.bio
         else
           p#profile-bio has no bio :(
-        p#profile-bio
+        p#profile-bio-follow
           | #[b #{followersCount}] followers
           | #[b #{followingCount}] following
       .three.wide.column
         //- checks if the user on page is followed by the logged in user
         if userIsCurrent
-          | Why would you follow yourself?
+          button.ui.button#edit-profile Edit profile
         else
           if isFollowedByCurrent
             button.ui.red.button#unfollow-button Unfollow

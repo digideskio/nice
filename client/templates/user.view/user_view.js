@@ -52,6 +52,33 @@ Template.user_view.events({
   'click #toggle-modal': evt => {
     evt.preventDefault()
     $('#profile-image-modal').modal('show')
+  },
+  // when the edit profile button on the own user page is clicked
+  'click #edit-profile': evt => {
+    evt.preventDefault()
+    let bio = Meteor.user().profile.bio ? Meteor.user().profile.bio : ''
+    let profileBio = `
+      <div class="ui input" id="profile-bio">
+        <input type="text" id="bio-editor" value="${bio}">
+      </div>
+    `
+    $('#profile-bio').replaceWith(profileBio)
+    $('#edit-profile').replaceWith(`
+      <button class="ui primary button" id="save-edit">Save</button>
+    `)
+  },
+  // likewise, when you're in 'edit mode' and press the save button
+  'click #save-edit': evt => {
+    evt.preventDefault()
+    let newbio = $('#bio-editor').val()
+    Users.update({_id: Meteor.userId()}, {$set: {'profile.bio': newbio}})
+    let profileReplacement = `
+      <p id="profile-bio">${newbio ? newbio : 'has no bio :('}</p>
+    `
+    $('#profile-bio').replaceWith(profileReplacement)
+    $('#save-edit').replaceWith(`
+      <button class="ui button" id="edit-profile">Edit profile</button>
+    `)
   }
 })
 
