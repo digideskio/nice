@@ -33,5 +33,5 @@ Security.defineMethod('ifChangesSelf', {
 Updates.permit(['insert']).ifLoggedIn().apply()
 
 // logged in users can add themselves to follower lists of other users
-Users.permit(['update']).ifLoggedIn().ifIsSameUser().apply()
+Users.permit(['update']).ifLoggedIn().ifIsSameUser().onlyProps(['following', 'profile']).apply()
 Users.permit(['update']).ifLoggedIn().ifChangesSelf().onlyProps(['followers']).apply()
