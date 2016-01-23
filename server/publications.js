@@ -16,6 +16,10 @@ Meteor.publish('updates', username => {
   return Updates.find({'user.username': username})
 })
 
+Meteor.publish('update', _id => {
+  return Updates.find({_id})
+})
+
 // meteor-internal
 Meteor.publish('userData', function () {
   if (this.userId) {
