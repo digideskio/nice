@@ -23,3 +23,18 @@ a#timeline-update-link:hover {
 h1#single-update-content {
   font-weight: 300;
 }
+
+#single-update-name {
+  color: #000;
+  font-size: 30px;
+  font-weight: 700;
+  margin-left: 10px;
+
+  > a {
+    color: #000;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
