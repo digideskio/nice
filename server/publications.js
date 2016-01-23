@@ -24,6 +24,16 @@ Meteor.publish('update', _id => {
   return Updates.find({_id})
 })
 
+Meteor.publish('updateFamily', _id => {
+  let thisUpdate = Updates.find({_id})
+  let updates = Updates.find({$or: {
+    {_id: thisUpdate.parent},
+    {parent: _id}
+  }})
+
+  return updates
+})
+
 // meteor-internal, for granular access control
 Meteor.publish('userData', function () {
   if (this.userId) {
