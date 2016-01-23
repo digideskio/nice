@@ -10,5 +10,12 @@ if Template.subscriptionsReady
             .description.grey on {{timestamp createdAt}}
     
       h1#single-update-content= content
+      
+      if currentUser
+        br
+        .ui.form
+          .field
+            textarea(name='reply' rows='3' placeholder='Type your reply...')
+          button.ui.button(type='submit') Reply
 else
   +spinner
