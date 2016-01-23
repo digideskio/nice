@@ -3,12 +3,12 @@ if Template.subscriptionsReady
     with parent
       .ui.comments
         .comment
-          a.avatar
+          a.avatar(href='/u/#{user.username}')
             img(src='{{gravatar user.email}}')
           .content
-            a.author= user.username
+            a.author(href='/u/#{user.username}')= user.username
             .metadata
-              span.date= relDate
+              a.date#update-link(href='/s/#{_id}')= relDate
             .text= content
   .ui.basic.segment
     with update
@@ -33,12 +33,12 @@ if Template.subscriptionsReady
     .ui.comments
       each children
           .comment
-            a.avatar
+            a.avatar(href='/u/#{user.username}')
               img(src='{{gravatar user.email}}')
             .content
-              a.author= user.username
+              a.author(href='/u/#{user.username}')= user.username
               .metadata
-                span.date= relDate
+                a.date#update-link(href='/s/#{_id}')= relDate
               .text= content
 else
   +spinner

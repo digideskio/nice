@@ -16,7 +16,11 @@ h1#profile-username {
   margin-bottom: 0;
 }
 
-a#timeline-update-link:hover {
+a#update-link {
+  color: #999;
+}
+
+a#update-link:hover {
   text-decoration: underline;
 }
 
