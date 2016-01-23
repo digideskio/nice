@@ -10,5 +10,8 @@ Template.update_view.helpers({
   },
   gravatar (email) {
     return Gravatar.imageUrl(email, {size: 300})
+  },
+  timestamp (date) {
+    return moment(date).format('MMMM Do YYYY, h:mm:ss A')
   }
 })
