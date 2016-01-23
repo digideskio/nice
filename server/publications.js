@@ -31,7 +31,6 @@ Meteor.publish('updateFamily', _id => {
     {_id: {$eq: thisUpdate.parent}},
     {parent: {$eq: _id}}
   ]})
-  console.log(updates.fetch())
 
   return updates
 })
