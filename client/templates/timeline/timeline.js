@@ -11,5 +11,12 @@ Template.timeline.helpers({
   },
   gravatar (email) {
     return Gravatar.imageUrl(email, {size: 50})
+  },
+  hasParent (_id) {
+    return Updates.findOne({_id}).parent
+  },
+  parent (_id) {
+    let thisUpdate = Updates.findOne({_id})
+    return Updates.findOne({_id: thisUpdate.parent})
   }
 })
