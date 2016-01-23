@@ -6,7 +6,7 @@ if Template.subscriptionsReady
           a(href='/u/#{user.username}') #[img(src='{{gravatar user.email}}')]
         .content
           a.summary(href='/u/#{user.username}') @#{user.username}
-          span.date= relDate
+          a.date#timeline-update-link(href='/u/#{_id}')= relDate
           .extra.text= content
       hr(style='border: 0; border-bottom: 1px lightgray solid;')
 else
