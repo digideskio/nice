@@ -25,11 +25,13 @@ Meteor.publish('update', _id => {
 })
 
 Meteor.publish('updateFamily', _id => {
-  let thisUpdate = Updates.find({_id})
-  let updates = Updates.find({$or: {
-    {_id: thisUpdate.parent},
-    {parent: _id}
-  }})
+  let thisUpdate = Updates.findOne({_id})
+  let updates = Updates.find({$or: [
+    {_id: {$eq: _id}},
+    {_id: {$eq: thisUpdate.parent}},
+    {parent: {$eq: _id}}
+  ]})
+  console.log(updates.fetch())
 
   return updates
 })
