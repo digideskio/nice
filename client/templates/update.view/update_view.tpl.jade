@@ -13,7 +13,7 @@ if Template.subscriptionsReady
       
       if currentUser
         br
-        .ui.form
+        form.ui.form#submitReply
           .field
             textarea(name='reply' rows='3' placeholder='Type your reply...')
           button.ui.button(type='submit') Reply
