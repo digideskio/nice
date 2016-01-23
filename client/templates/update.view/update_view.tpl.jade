@@ -1,4 +1,15 @@
 if Template.subscriptionsReady
+  if hasParent
+    with parent
+      .ui.comments
+        .comment
+          a.avatar
+            img(src='{{gravatar user.email}}')
+          .content
+            a.author= user.username
+            .metadata
+              span.date= relDate
+            .text= content
   .ui.basic.segment
     with update
       .ui.link.items
@@ -11,11 +22,23 @@ if Template.subscriptionsReady
     
       h1#single-update-content= content
       
-      if currentUser
-        br
-        form.ui.form#submitReply
-          .field
-            textarea(name='reply' rows='3' placeholder='Type your reply...')
-          button.ui.button(type='submit') Reply
+  if currentUser
+    br
+    form.ui.form#submitReply
+      .field
+        textarea(name='reply' rows='3' placeholder='Type your reply...')
+      button.ui.button(type='submit') Reply
+  
+  if hasChildren
+    .ui.comments
+      each children
+          .comment
+            a.avatar
+              img(src='{{gravatar user.email}}')
+            .content
+              a.author= user.username
+              .metadata
+                span.date= relDate
+              .text= content
 else
   +spinner

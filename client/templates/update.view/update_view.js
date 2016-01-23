@@ -6,13 +6,25 @@ Template.update_view.onCreated(function () {
 
 Template.update_view.helpers({
   update () {
-    return Updates.findOne({_id: FlowRouter.getParam('_id')})
+    return thisUpdate()
   },
   gravatar (email) {
     return Gravatar.imageUrl(email, {size: 300})
   },
   timestamp (date) {
     return moment(date).format('MMMM Do YYYY, h:mm:ss A')
+  },
+  hasParent () {
+    return thisUpdate().parent
+  },
+  parent () {
+    return Updates.findOne({_id: thisUpdate().parent})
+  },
+  hasChildren () {
+    return Updates.find({parent: thisUpdate()._id}).count() !== 0
+  },
+  children () {
+    return Updates.find({parent: thisUpdate()._id})
   }
 })
 
@@ -27,9 +39,13 @@ Template.update_view.events({
       username: tUser.username,
       email: tUser.emails[0].address
     }
-    let parent = Updates.findOne({_id: FlowRouter.getParam('_id')})._id
+    let parent = thisUpdate()._id
 
     Updates.insert({content, parent, user})
     $('#submitReply textarea').val('')
   }
 })
+
+const thisUpdate = () => {
+  return Updates.findOne({_id: FlowRouter.getParam('_id')})
+}
