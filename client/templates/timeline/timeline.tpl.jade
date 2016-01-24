@@ -14,7 +14,7 @@ if Template.subscriptionsReady
             with (parent _id)
               a.date#update-link(href='/s/#{_id}')
                 | #[i.angle.right.icon] #{user.username}
-          .extra.text= content
+          .extra.text!= parseMentions
       hr(style='border: 0; border-bottom: 1px lightgray solid;')
 else
   +spinner

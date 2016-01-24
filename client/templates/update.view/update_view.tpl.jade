@@ -9,7 +9,7 @@ if Template.subscriptionsReady
             a.author(href='/u/#{user.username}')= user.username
             .metadata
               a.date#update-link(href='/s/#{_id}')= relDate
-            .text= content
+            .text!= parseMentions
   .ui.basic.segment
     with update
       .ui.link.items
@@ -20,7 +20,7 @@ if Template.subscriptionsReady
             .header= user.username
             .description.grey on {{timestamp createdAt}}
     
-      h1#single-update-content {{{parseMentions content}}}
+      h1#single-update-content!= parseMentions
       
   if currentUser
     br
@@ -39,6 +39,6 @@ if Template.subscriptionsReady
               a.author(href='/u/#{user.username}')= user.username
               .metadata
                 a.date#update-link(href='/s/#{_id}')= relDate
-              .text= content
+              .text!= parseMentions
 else
   +spinner
