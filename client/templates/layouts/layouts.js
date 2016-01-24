@@ -34,5 +34,11 @@ Template.sidebar.events({
     Updates.insert({content, user})
 
     $('#updateModalForm textarea').val('')
+  },
+  'keydown textarea': evt => {
+    if ((evt.metaKey && evt.keyCode === 13) ||
+        (evt.ctrlKey && evt.keyCode === 13)) {
+      $('#updateModalForm').submit()
+    }
   }
 })

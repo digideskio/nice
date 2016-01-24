@@ -16,10 +16,19 @@ h1#profile-username {
   margin-bottom: 0;
 }
 
-a#timeline-update-link:hover {
+a#update-link {
+  color: #999;
+}
+
+a#update-link:hover {
   text-decoration: underline;
 }
 
 h1#single-update-content {
   font-weight: 300;
+}
+
+hr {
+  border: 0;
+  border-bottom: 1px lightgray solid;
 }

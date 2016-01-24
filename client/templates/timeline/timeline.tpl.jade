@@ -2,13 +2,18 @@ if Template.subscriptionsReady
   .ui.large.feed
     each updates
       .event
-        .label 
+        .label
           //- 'user' in this context is the sub-document stored in every
           //- update document, it provides basic info about the update creator
           a(href='/u/#{user.username}') #[img(src='{{gravatar user.email}}')]
         .content
           a.summary(href='/u/#{user.username}') @#{user.username}
-          a.date#timeline-update-link(href='/s/#{_id}')= relDate
+          a.date#update-link(href='/s/#{_id}')
+            | #{relDate}
+          if (hasParent _id)
+            with (parent _id)
+              a.date#update-link(href='/s/#{_id}')
+                | #[i.angle.right.icon] #{user.username}
           .extra.text= content
       hr(style='border: 0; border-bottom: 1px lightgray solid;')
 else

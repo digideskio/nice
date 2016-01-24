@@ -10,7 +10,13 @@ Template.timeline.helpers({
     return Updates.find({}, {sort: {createdAt: -1}})
   },
   gravatar (email) {
-    console.log(email)
     return Gravatar.imageUrl(email, {size: 50})
+  },
+  hasParent (_id) {
+    return Updates.findOne({_id}).parent
+  },
+  parent (_id) {
+    let thisUpdate = Updates.findOne({_id})
+    return Updates.findOne({_id: thisUpdate.parent})
   }
 })
