@@ -7,10 +7,10 @@ Template.main.onRendered(() => {
   if (Session.get('nice.bannerHidden') === true)
     $('#welcome').hide(0)
 
-  $('#welcome .close').on('click', () => {
+  $('#welcome i.close.icon').on('click', () => {
     Session.setPersistent('nice.bannerHidden', true)
     Session.setPersistent('nice.bannerContent', Info.banner.content)
-    $('#welcome').hide(0)
+    $('#welcome').fadeOut()
   })
 
   $('#updateModal').sticky({
