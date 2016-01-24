@@ -1,10 +1,10 @@
-//- TODO: rename this template
-
 .ui.blue.top.fixed.menu
   .header.item nice alpha
   a.item(class='{{isActivePath "/timeline"}}' href='/timeline')
     | Timeline
-  a.item(class='{{isActivePath "/notifications"}}' href='/notifications')
+  a.disabled.item(class='{{isActivePath "/notifications"}}' href='/notifications')
     | Notifications
-  a.right.item(href='/logout')
-    | Logout
+  .right.menu
+    a.item(href='/u/#{currentUser.username}') @#{currentUser.username}
+    a.item(href='/logout')
+      | Logout
