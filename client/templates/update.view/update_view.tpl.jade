@@ -26,7 +26,7 @@ if Template.subscriptionsReady
     br
     form.ui.form#submitReply
       .field
-        textarea(name='reply' rows='3' placeholder='Type your reply...')
+        textarea(name='reply' rows='3' placeholder='Type your reply...') {{replyMentions update}}
       button.ui.button(type='submit') Reply
   
   if hasChildren
