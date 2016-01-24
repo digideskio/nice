@@ -43,6 +43,12 @@ Template.update_view.events({
 
     Updates.insert({content, parent, user})
     $('#submitReply textarea').val('')
+  },
+  'keydown textarea': evt => {
+    if ((evt.metaKey && evt.keyCode === 13) ||
+        (evt.ctrlKey && evt.keyCode === 13)) {
+      $('#submitReply').submit()
+    }
   }
 })
 
