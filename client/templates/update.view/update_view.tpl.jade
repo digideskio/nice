@@ -20,7 +20,7 @@ if Template.subscriptionsReady
             .header= user.username
             .description.grey on {{timestamp createdAt}}
     
-      h1#single-update-content= content
+      h1#single-update-content {{{parseMentions content}}}
       
   if currentUser
     br

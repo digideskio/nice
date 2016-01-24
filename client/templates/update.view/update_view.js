@@ -25,6 +25,16 @@ Template.update_view.helpers({
   },
   children () {
     return Updates.find({parent: thisUpdate()._id})
+  },
+  parseMentions (content) {
+    const re = /@[\w\d]+/igm
+    let match, newcontent
+    while ((match = re.exec(content)) !== null) {
+      let link = '<a href="/u/' + match[0].split('@')[1] + '">' + match[0] + '</a>'
+      let regex = new RegExp(match[0], 'ig')
+      newcontent = content.replace(regex, link)
+    }
+    return newcontent
   }
 })
 
