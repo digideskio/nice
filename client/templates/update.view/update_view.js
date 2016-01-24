@@ -29,6 +29,8 @@ Template.update_view.helpers({
   replyMentions (update) {
     let matches = update.parseMentions(true)
     let str = matches.map(it => it[0]).join(' ') + ' '
+    if (str === ' ')
+      return ''
     return str
   }
 })
