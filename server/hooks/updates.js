@@ -1,1 +1,3 @@
-// what is this
+Updates.before.insert((userId, doc) => {
+	
+})

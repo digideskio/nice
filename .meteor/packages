@@ -31,6 +31,7 @@ aldeed:collection2
 aldeed:autoform
 dburles:collection-helpers
 percolate:migrations
+matb33:collection-hooks
 
 # Assets
 fourseven:scss

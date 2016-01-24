@@ -9,7 +9,7 @@ if Template.subscriptionsReady
             a.author(href='/u/#{user.username}')= user.username
             .metadata
               a.date#update-link(href='/s/#{_id}')= relDate
-            .text= content
+            .text!= parseMentions
   .ui.basic.segment
     with update
       .ui.link.items
@@ -20,13 +20,13 @@ if Template.subscriptionsReady
             .header= user.username
             .description.grey on {{timestamp createdAt}}
     
-      h1#single-update-content= content
+      h1#single-update-content!= parseMentions
       
   if currentUser
     br
     form.ui.form#submitReply
       .field
-        textarea(name='reply' rows='3' placeholder='Type your reply...')
+        textarea(name='reply' rows='3' placeholder='Type your reply...') {{replyMentions update}}
       button.ui.button(type='submit') Reply
   
   if hasChildren
@@ -39,6 +39,6 @@ if Template.subscriptionsReady
               a.author(href='/u/#{user.username}')= user.username
               .metadata
                 a.date#update-link(href='/s/#{_id}')= relDate
-              .text= content
+              .text!= parseMentions
 else
   +spinner

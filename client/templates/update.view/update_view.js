@@ -25,6 +25,13 @@ Template.update_view.helpers({
   },
   children () {
     return Updates.find({parent: thisUpdate()._id})
+  },
+  replyMentions (update) {
+    let matches = update.parseMentions(true)
+    let str = matches.map(it => it[0]).join(' ') + ' '
+    if (str === ' ')
+      return ''
+    return str
   }
 })
 
