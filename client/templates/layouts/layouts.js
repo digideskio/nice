@@ -12,6 +12,10 @@ Template.main.onRendered(() => {
     Session.setPersistent('nice.bannerContent', Info.banner.content)
     $('#welcome').hide(0)
   })
+
+  $('#updateModal').sticky({
+    context: '#main'
+  })
 })
 
 Template.main.helpers({
