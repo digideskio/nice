@@ -22,6 +22,9 @@ Template.timeline.helpers({
   parent (_id) {
     let thisUpdate = Updates.findOne({_id})
     return Updates.findOne({_id: thisUpdate.parent})
+  },
+  hasMore () {
+    return !(Updates.find().count() < Template.user_view.limit)
   }
 })
 

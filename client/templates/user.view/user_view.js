@@ -24,6 +24,9 @@ Template.user_view.helpers({
   },
   followingCount () {
     return thisUser().following.length
+  },
+  hasMore () {
+    return !(Updates.find().count() < Template.user_view.limit)
   }
 })
 
