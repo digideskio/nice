@@ -16,5 +16,6 @@ if Template.subscriptionsReady
                 | #[i.angle.right.icon] #{user.username}
           .extra.text!= parseMentions
       hr(style='border: 0; border-bottom: 1px lightgray solid;')
+    button.ui.red.button#paginate Load more
 else
   +spinner

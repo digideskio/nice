@@ -1,11 +1,11 @@
-Meteor.publish('updateFeed', _id => {
+Meteor.publish('updateFeed', (_id, limit) => {
   let followed = Users.findOne({_id}).following
   // filter out user updates for only the ones followed and, of course, the
   // user themselves
   let updates = Updates.find({$or: [
     {'user._id': {$in: followed}},
     {'user._id': {$eq: _id}}
-  ]})
+  ]}, {sort: {createdAt: -1}, limit})
   return updates
 })
 
