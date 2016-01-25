@@ -34,5 +34,6 @@ if Template.subscriptionsReady
             a.date#timeline-update-link(href='/s/#{_id}')= relDate
             .extra.text= content
         hr(style='border: 0; border-bottom: 1px lightgray solid;')
+    button.ui.red.button#paginate Load more
 else
   +spinner

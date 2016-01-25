@@ -1,7 +1,11 @@
+Template.user_view.limit = 20
+Template.user_view._trigger = new Tracker.Dependency()
+
 Template.user_view.onCreated(function () {
   this.autorun(() => {
+    Template.user_view._trigger.depend()
     this.subscribe('userOne', FlowRouter.getParam('username'))
-    this.subscribe('updates', FlowRouter.getParam('username'))
+    this.subscribe('updatesUser', FlowRouter.getParam('username'), Template.user_view.limit)
   })
 })
 
@@ -79,6 +83,13 @@ Template.user_view.events({
     $('#save-edit').replaceWith(`
       <button class="ui button" id="edit-profile">Edit profile</button>
     `)
+  },
+  // paginate updates on click
+  'click #paginate': evt => {
+    evt.preventDefault()
+    Template.user_view.limit = Template.user_view.limit + 20
+    Template.user_view._trigger.changed()
+    $(document).scrollTop($(document).height())
   }
 })
 

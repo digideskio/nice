@@ -15,8 +15,8 @@ Meteor.publish('userOne', username => {
 })
 
 // returns all updates from a single user
-Meteor.publish('updates', username => {
-  return Updates.find({'user.username': username})
+Meteor.publish('updatesUser', (username, limit) => {
+  return Updates.find({'user.username': username}, {sort: {createdAt: -1}, limit})
 })
 
 // returns a single update
