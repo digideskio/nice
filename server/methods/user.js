@@ -16,5 +16,11 @@ Meteor.methods({
       Users.update({_id: user._id}, {$pull: {following: tUser._id}})
       Users.update({_id: tUser._id}, {$pull: {followers: user._id}})
     }
+	},
+	'user.addVerified' (targetId) {
+		if (!Roles.userIsInRole(targetId, 'verified') &&
+				Roles.userIsInRole(this.userId, 'admin')) {
+			Roles.addUsersToRoles(targetId, 'verified')
+		}
 	}
 })
