@@ -1,5 +1,4 @@
 if currentUser
-
   .ui.doubling.stackable.grid.container.top-margin#main
     .sixteen.wide.column
       +Template.dynamic template=top
@@ -19,24 +18,23 @@ if currentUser
           .progress
         .label Site Progress
       script $('#site-progress').progress()
+  .ui.inverted.vertical.footer.segment
+    .ui.center.aligned.container
+      .ui.stackable.inverted.divided.grid
+        .eight.wide.column
+          h4.ui.inverted.header Links
+          .ui.inverted.link.list
+            a.item(href='/static/rules') Rules
+        .eight.wide.column
+          h4.ui.inverted.header About
+          p.
+            nice is lovingly crafted by #[a(href='http://jona.io') jona]. Although
+            I say that, there are more people who've contributed to its
+            development in some way, to name a few:
+          .ui.inverted.link.list
+            a.item(href='http://pixelde.su') pixeldesu
+            a.item(href='http://freferi.info') Freferi
+            a.item(href='http://nilsding.org') nilsding
 else
   .ui.container.top-margin
     +Template.dynamic template=main
-
-.ui.inverted.vertical.footer.segment
-  .ui.center.aligned.container
-    .ui.stackable.inverted.divided.grid
-      .eight.wide.column
-        h4.ui.inverted.header Links
-        .ui.inverted.link.list
-          a.item(href='/static/rules') Rules
-      .eight.wide.column
-        h4.ui.inverted.header About
-        p.
-          nice is lovingly crafted by #[a(href='http://jona.io') jona]. Although
-          I say that, there are more people who've contributed to its
-          development in some way, to name a few:
-        .ui.inverted.link.list
-          a.item(href='http://pixelde.su') pixeldesu
-          a.item(href='http://freferi.info') Freferi
-          a.item(href='http://nilsding.org') nilsding
