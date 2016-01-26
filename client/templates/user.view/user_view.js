@@ -34,26 +34,20 @@ Template.user_view.events({
   // this is what happens when someone follows
   'click #follow-button': evt => {
     evt.preventDefault()
-    let user = Meteor.user()
-    let tUser = thisUser()
-    // check if the logged in user isn't following the target user yet
-    if (!_.contains(user.following, tUser._id) &&
-        !_.contains(tUser.followers, user._id)) {
-      Users.update({_id: user._id}, {$push: {following: tUser._id}})
-      Users.update({_id: tUser._id}, {$push: {followers: user._id}})
-    }
+    $('#follow-button').addClass('loading')
+    Meteor.call('user.follow', thisUser()._id, (err, res) => {
+      if (err) { throw Meteor.Error(403) }
+      $('#follow-button').removeClass('loading')
+    })
   },
   // likewise, this is what happens when someone unfollows
   'click #unfollow-button': evt => {
     evt.preventDefault()
-    let user = Meteor.user()
-    let tUser = thisUser()
-    // check if the logged in user is following the target user
-    if (_.contains(user.following, tUser._id) &&
-        _.contains(tUser.followers, user._id)) {
-      Users.update({_id: user._id}, {$pull: {following: tUser._id}})
-      Users.update({_id: tUser._id}, {$pull: {followers: user._id}})
-    }
+    $('#unfollow-button').addClass('loading')
+    Meteor.call('user.unfollow', thisUser()._id, (err, res) => {
+      if (err) { throw Meteor.Error(403) }
+      $('#unfollow-button').removeClass('loading')
+    })
   },
   // toggles the user image modal
   'click #toggle-modal': evt => {
