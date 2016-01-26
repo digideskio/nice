@@ -27,6 +27,9 @@ Template.user_view.helpers({
   },
   hasMore () {
     return !(Updates.find().count() < Template.user_view.limit)
+  },
+  isVerified () {
+    return Roles.userIsInRole(thisUser()._id, 'verified')
   }
 })
 
