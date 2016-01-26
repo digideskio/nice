@@ -28,11 +28,12 @@ Template.update_view.helpers({
   },
   replyMentions (update) {
     let matches = update.parseMentions(true)
+    let usernames = matches.map(it => it[0])
     let str
-    if (!matches.map(it => it[0]).includes(`@${update.user.username}`)) {
-      str = `@${update.user.username} ${matches.map(it => it[0]).join(' ')}`
+    if (!usernames.includes(`@${update.user.username}`)) {
+      str = `@${update.user.username} ${usernames.join(' ')}`
     } else {
-      str = `${matches.map(it => it[0]).join(' ')}`
+      str = `${usernames.join(' ')}`
     }
     if (str === ' ')
       return ''
