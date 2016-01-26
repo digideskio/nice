@@ -8,8 +8,7 @@ Accounts.validateNewUser(user => {
   if (!invitation)
     throw new Meteor.Error(403, 'Please provide a valid invitation token.')
   Invitations.update({
-    token: user.profile.invitationToken,
-    used: false
+    token: user.profile.invitationToken
   }, {$set: { used: true }})
   return true
 })
