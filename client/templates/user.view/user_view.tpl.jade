@@ -6,7 +6,7 @@ if Template.subscriptionsReady
       .eleven.wide.column
         h1.ui.header#profile-username
           | #{username}
-          if (isInRole 'verified')
+          if isInRole 'verified'
             .ui.circular.teal.label #[i.checkmark.icon.verified]
         if profile.bio
           p#profile-bio= profile.bio

@@ -9,5 +9,7 @@ Security.defineMethod('ifIsSameUser', {
 // users can create new updates
 Updates.permit(['insert']).ifLoggedIn().apply()
 
-// logged in users can add themselves to follower lists of other users
+// logged in users can only edit THEIR profile
 Users.permit(['update']).ifLoggedIn().ifIsSameUser().onlyProps(['profile']).apply()
+
+Invitations.permit(['insert']).ifLoggedIn().ifHasRole('admin').apply()

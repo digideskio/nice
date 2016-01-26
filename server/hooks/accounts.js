@@ -18,5 +18,6 @@ Accounts.onCreateUser((opts, user) => {
   user.profile = opts.profile
   user.following = []
   user.followers = []
+  user.roles = []
   return user
 })
