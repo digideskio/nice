@@ -30,10 +30,10 @@ Template.update_view.helpers({
     let matches = update.parseMentions(true)
     let usernames = matches.map(it => it[0])
     let str
-    if (!usernames.includes(`@${update.user.username}`)) {
-      str = `@${update.user.username} ${usernames.join(' ')}`
+    if (!matches.includes(`@${update.user.username}`)) {
+      str = `@${update.user.username} ${matches.join(' ')}`
     } else {
-      str = `${usernames.join(' ')}`
+      str = `${matches.join(' ')}`
     }
     if (str === ' ')
       return ''
