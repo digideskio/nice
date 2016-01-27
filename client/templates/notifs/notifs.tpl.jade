@@ -1,0 +1,23 @@
+if Template.subscriptionsReady
+	.ui.large.feed
+		each notifications
+			.event
+				.label
+					a(href='/u/#{from.username}') #[img(src='{{gravatar from.email}}')]
+				.content
+					if isMention type
+						span.summary
+							a(href='/u/#{from.username}') @#{from.username}	
+							| mentioned you
+						a.date.n#update-link(href='/s/#{status._id}')
+							| #{relDate}
+					else
+						a.summary(href='/u/#{from.username}') @#{from.username}
+						a.date#update-link(href='/s/#{_id}')
+							| #{relDate}
+					.extra.text!= parseMentions
+			hr(style='border: 0; border-bottom: 1px lightgray solid;')
+		if hasMore
+			button.ui.red.button#paginate Load more
+else
+	+spinner

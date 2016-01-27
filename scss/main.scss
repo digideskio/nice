@@ -18,6 +18,10 @@ h1#profile-username {
 
 a#update-link {
   color: #999;
+
+  &.n {
+    margin-left: 5px;
+  }
 }
 
 a#update-link:hover {

@@ -37,8 +37,8 @@ Meteor.publish('updateFamily', _id => {
 })
 
 // publishes all notifications for a user
-Meteor.publish('notifications', _id => {
-  return Notifications.find({to: _id})
+Meteor.publish('notifications', (_id, limit) => {
+  return Notifications.find({to: _id}, {limit})
 })
 
 // only unread notifications. for use in the nav template

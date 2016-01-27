@@ -1,6 +1,7 @@
 Meteor.methods({
-	'notifications.new' (targetId, type, content) {
+	'notifications.new' (targetId, type, contentId) {
 		let user = Users.findOne({_id: this.userId})
+		let status = Updates.findOne({_id: contentId})
 		let doc = {
 			to: targetId,
 			from: {
@@ -9,7 +10,10 @@ Meteor.methods({
 				email: user.emails[0].address
 			},
 			type,
-			content,
+			status: {
+				_id: status._id,
+				content: status.content
+			},
 			read: false
 		}
 		Notifications.insert(doc)

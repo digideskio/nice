@@ -4,6 +4,6 @@ Updates.after.insert(function (userId, doc) {
 	let mentions = thisDoc.parseMentions(true)
 	mentions.forEach(e => {
 		let user = Users.findOne({username: e.split('@')[1]})
-		Meteor.call('notifications.new', user._id, 'mention', thisDoc.content)
+		Meteor.call('notifications.new', user._id, 'mention', thisDoc._id)
 	})
 })
