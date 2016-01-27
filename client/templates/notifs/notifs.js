@@ -12,7 +12,7 @@ Template.notifs.onCreated(function () {
 
 Template.notifs.helpers({
 	notifications () {
-		return Notifications.find({}, {sort: {createdAt: -1}})
+		return Notifications.find({}, {sort: {createdAt: 1}})
 	},
 	gravatar (email) {
 		return Gravatar.imageUrl(email, {size: 50})
