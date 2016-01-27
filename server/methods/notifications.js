@@ -13,5 +13,13 @@ Meteor.methods({
 			read: false
 		}
 		Notifications.insert(doc)
+	},
+
+	'notifications.allRead' (_id) {
+		if (_id === this.userId) {
+			Notifications.find({to: _id, read: false}).forEach(notif => {
+				Notifications.update(notif, {$set: {read: true}})
+			})
+		}
 	}
 })

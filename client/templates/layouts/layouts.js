@@ -60,6 +60,9 @@ Template.nav.helpers({
   unreadNotifications () {
     let count = Notifications.find({read: false}).count()
     if (count === 0) {
+      let re = /\(\d+\)/
+      if (re.test(document.title))
+        document.title = document.title.split(re)[1]
       return ''
     } else {
       document.title = `(${count}) ${document.title}`
