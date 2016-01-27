@@ -58,10 +58,12 @@ Template.nav.onCreated(function () {
 
 Template.nav.helpers({
   unreadNotifications () {
-    if (Notifications.find().count() === 0) {
+    let count = Notifications.find({read: false}).count()
+    if (count === 0) {
       return ''
     } else {
-      return `<div class="ui blue circular mini label">${Notifications.find().count()}</div>`
+      document.title = `(${count}) ${document.title}`
+      return `<div class="ui blue circular mini label">${count}</div>`
     }
   }
 })
