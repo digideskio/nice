@@ -9,7 +9,8 @@ Meteor.methods({
 				email: user.emails[0].address
 			},
 			type,
-			content
+			content,
+			read: false
 		}
 		Notifications.insert(doc)
 	}
