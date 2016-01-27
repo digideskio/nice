@@ -17,8 +17,10 @@ also had obvious benefits in the fact that we can look over each others code.
 1. have `meteor` installed
 2. clone this repository
 3. `meteor`
+4. go to http://localhost:3030/register?token=aaaaaaaaaaaaaaaaaaaa
 
-(if you want to actually _deploy_ it, consider something like meteor up)
+(if you want to actually _deploy_ it, consider something like meteor up, also
+you'll probably need to change lots of hardcoded stuff heh)
 
 ## license
 
