@@ -46,3 +46,11 @@ Template.sidebar.events({
     }
   }
 })
+
+// header template
+
+Template.nav.onCreated(function () {
+  this.autorun(() => {
+    this.subscribe('notifications', Meteor.userId())
+  })
+})
