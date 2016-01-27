@@ -24,6 +24,7 @@ Meteor.publish('update', _id => {
   return Updates.find({_id})
 })
 
+// returns an update with parent and children (hence 'family')
 Meteor.publish('updateFamily', _id => {
   let thisUpdate = Updates.findOne({_id})
   let updates = Updates.find({$or: [
@@ -33,6 +34,16 @@ Meteor.publish('updateFamily', _id => {
   ]})
 
   return updates
+})
+
+// publishes all notifications for a user
+Meteor.publish('notifications', (_id, limit) => {
+  return Notifications.find({to: _id}, {limit})
+})
+
+// only unread notifications. for use in the nav template
+Meteor.publish('unreadNotifications', _id => {
+  return Notifications.find({to: _id, read: false})
 })
 
 // meteor-internal, for granular access control

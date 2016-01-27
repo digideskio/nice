@@ -46,3 +46,27 @@ Template.sidebar.events({
     }
   }
 })
+
+// header template
+
+Template.nav.onCreated(function () {
+  this.autorun(() => {
+    if (FlowRouter.getRouteName() !== 'notifications')
+      this.subscribe('unreadNotifications', Meteor.userId())
+  })
+})
+
+Template.nav.helpers({
+  unreadNotifications () {
+    let count = Notifications.find({read: false}).count()
+    if (count === 0) {
+      let re = /\(\d+\)/
+      if (re.test(document.title))
+        document.title = document.title.split(re)[1]
+      return ''
+    } else {
+      document.title = `(${count}) ${document.title}`
+      return `<div class="ui blue circular mini label">${count}</div>`
+    }
+  }
+})

@@ -2,8 +2,8 @@
   .header.item nice alpha
   a.item(class='{{isActivePath "/timeline"}}' href='/timeline')
     | Timeline
-  a.disabled.item
-    | Notifications
+  a.item(class='{{isActivePath "/notifications"}}' href='/notifications')
+    | Notifications {{{unreadNotifications}}}
   .right.menu
     a.item(href='/u/#{currentUser.username}') @#{currentUser.username}
     a.item(href='/logout')
