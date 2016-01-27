@@ -3,7 +3,7 @@
   a.item(class='{{isActivePath "/timeline"}}' href='/timeline')
     | Timeline
   a.item(class='{{isActivePath "/notifications"}}' href='/notifications')
-    | Notifications
+    | Notifications {{{unreadNotifications}}}
   .right.menu
     a.item(href='/u/#{currentUser.username}') @#{currentUser.username}
     a.item(href='/logout')

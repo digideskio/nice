@@ -51,6 +51,17 @@ Template.sidebar.events({
 
 Template.nav.onCreated(function () {
   this.autorun(() => {
-    this.subscribe('notifications', Meteor.userId())
+    if (FlowRouter.getRouteName() !== 'notifications')
+      this.subscribe('unreadNotifications', Meteor.userId())
   })
+})
+
+Template.nav.helpers({
+  unreadNotifications () {
+    if (Notifications.find().count() === 0) {
+      return ''
+    } else {
+      return `<div class="ui blue circular mini label">${Notifications.find().count()}</div>`
+    }
+  }
 })

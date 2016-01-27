@@ -41,6 +41,11 @@ Meteor.publish('notifications', _id => {
   return Notifications.find({to: _id})
 })
 
+// only unread notifications. for use in the nav template
+Meteor.publish('unreadNotifications', _id => {
+  return Notifications.find({to: _id, read: false})
+})
+
 // meteor-internal, for granular access control
 Meteor.publish('userData', function () {
   if (this.userId) {
