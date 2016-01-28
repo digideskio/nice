@@ -17,7 +17,7 @@ if Template.subscriptionsReady
           | #[b #{followingCount}] following
       .three.wide.column
         //- checks if the user on page is followed by the logged in user
-        if userIsCurrent
+        if isCurrent
           button.ui.button#edit-profile Edit profile
         else
           if isFollowedByCurrent

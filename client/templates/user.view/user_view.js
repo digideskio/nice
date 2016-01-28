@@ -16,20 +16,8 @@ Template.user_view.helpers({
   updates () {
     return Updates.find({}, {sort: {createdAt: -1}})
   },
-  userIsCurrent () {
-    return thisUser()._id === Meteor.userId()
-  },
-  followersCount () {
-    return thisUser().followers.length
-  },
-  followingCount () {
-    return thisUser().following.length
-  },
   hasMore () {
     return !(Updates.find().count() < Template.user_view.limit)
-  },
-  isVerified () {
-    return Roles.userIsInRole(thisUser()._id, 'verified')
   }
 })
 
